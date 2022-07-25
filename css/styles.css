@@ -129,7 +129,7 @@ header .link:hover, header .link:focus{
     padding-bottom: 200px;
     text-align: center;
     background-color: var(--dark-background-color);
-    max-width: 1600px;
+    width: 1600px;
     height: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -487,7 +487,12 @@ address {
     gap: 30px;
 }
 
-.examples-cards:hover{
+.examples-cards{
+    display: block;
+}
+.examples-cards:hover,
+.examples-cards:focus
+{
 box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
 0px 4px 4px rgba(0, 0, 0, 0.06),
 1px 4px 6px rgba(0, 0, 0, 0.16);}
@@ -497,9 +502,12 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     overflow: hidden;
 }
 
-.examples-cards:hover .overlay{
-    transform: translatey(0);
-}
+.examples-cards:hover .overlay,
+.examples-cards:focus .overlay
+{
+        transform: translatey(0);
+    }
+
 .overlay{
     position: absolute;
     bottom: 0;
@@ -512,7 +520,8 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     line-height: 1.6;
     letter-spacing: 0.03em;
     padding: 63px 24px;
-    border: 0;
+    margin-bottom: -1px;
+
     transform: translatey(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
