@@ -56,6 +56,7 @@ img{display: block;
 .link {
     text-decoration: none;
     color: inherit;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 header .link:hover, header .link:focus{
     color: var(--accent-color);
@@ -71,7 +72,6 @@ header .link:hover, header .link:focus{
     letter-spacing: 0.02em;
 }
 .site-nav li {
-    /* outline: 2px solid tomato; */
     margin-right: 50px;
 }
 .site-nav li:last-child{margin-right: 0;}
@@ -102,8 +102,8 @@ header .link:hover, header .link:focus{
     align-items: center;
     justify-content: center;
     font-weight: 500;
-        line-height: 1.14;
-        letter-spacing: 0.02em;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
 }
 .header-contacts li:first-child{margin-right: 50px;}
 
@@ -129,7 +129,7 @@ header .link:hover, header .link:focus{
     padding-bottom: 200px;
     text-align: center;
     background-color: var(--dark-background-color);
-    width: 1600px;
+    max-width: 1600px;
     height: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -142,7 +142,7 @@ header .link:hover, header .link:focus{
     background-position: center;
     background-size: cover;}
 .hero h1 {
-    max-width: 696px;
+    width: 696px;
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -164,7 +164,8 @@ header .link:hover, header .link:focus{
     font-weight: 700;
     font-size: 16px;
     line-height: 1.9;
-    letter-spacing: 0.06em;}
+    letter-spacing: 0.06em;
+}
 .button:hover {
     cursor: pointer;
 }
@@ -290,12 +291,14 @@ header .link:hover, header .link:focus{
     width: 44px;
     height: 44px;
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .soc-icon{
     width: 20px;
     height: 20px;
     fill: #AFB1B8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .soc-icon-bg:hover, .soc-icon-bg:focus{
     background-color: var(--accent-color);}
@@ -320,17 +323,15 @@ header .link:hover, header .link:focus{
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     background-size: cover;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .our-clients-logo{
     fill: #AFB1B8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* .icon-logo1{
-    width: 41px;
-    height: 46px;
-} */
+
 .our-clients-bg:hover .our-clients-logo, .our-clients-bg:focus .our-clients-logo{
-    fill:var(--accent-color);
-    border: 1px solid var(--accent-color);
+    fill:var(--accent-color); 
 }
 .our-clients-bg:hover,
 .our-clients-bg:focus{
@@ -389,9 +390,11 @@ address {
     width: 44px;
     height: 44px;
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-soc-icon-bg:last-child{
     margin-right: 0;
+    
 }
 .footer-soc-icon{
     width: 20px; 
@@ -409,23 +412,29 @@ address {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1), visibility 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden{
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
-
+.backdrop.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(0.2);
+}
 .modal{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
     width: 528px;
-    height: 581px;
+    min-height: 581px;
     background-color: var(--primary-background-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-}
+    }
+
 .buttom-close-bg{
     position: absolute;
     top: 8px;
@@ -441,6 +450,7 @@ address {
 }
 .icon-buttom-close{
     fill: var(--logo-studio-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .buttom-close-bg:hover{
     cursor: pointer;
@@ -463,6 +473,7 @@ address {
 .filter li{margin-right: 8px;}
 .filter li:last-child{margin-right: 0;}
 .filter-list {
+    display: block;
     border-radius: 4px;
     border: 0;
     padding: 6px 22px;
@@ -475,6 +486,9 @@ address {
     text-align: center;
     letter-spacing: 0.03em;
     cursor: pointer;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-list:hover, .filter-list:focus{
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -489,6 +503,7 @@ address {
 
 .examples-cards{
     display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .examples-cards:hover,
 .examples-cards:focus
@@ -521,7 +536,6 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     letter-spacing: 0.03em;
     padding: 63px 24px;
     margin-bottom: -1px;
-
     transform: translatey(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
